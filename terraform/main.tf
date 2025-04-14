@@ -1,14 +1,9 @@
-provider "aws" {
-  region = "us-east-1"
-}
-
+hcl
 resource "aws_instance" "web" {
-  ami           = "ami-0c55b159cbfafe1f0" # Amazon Linux 2 AMI
-  instance_type = "t2.micro"
-  key_name      = "your-key-pair"
-  
+  ami           = "ami-0c55b159cbfafe1f0"
+  instance_type = var.instance_type
+  key_name      = "your-key"
   tags = {
     Name = "WebServer"
   }
 }
-

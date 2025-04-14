@@ -1,12 +1,12 @@
+yaml
 - name: Configure Web Server
-  hosts: all
+  hosts: web
   become: yes
   tasks:
     - name: Install Nginx
       yum:
         name: nginx
         state: present
-
     - name: Start Nginx
       service:
         name: nginx
